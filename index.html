@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <h1>Physics And Astronomy, UNN <br class="mobile-only-break">CGPA Calculator</h1>
+            <div class="theme-switch-wrapper">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- First Year -->
+        <details class="year-details" id="year-1">
+            <summary>Calculate First Year GPA</summary>
+            <div class="year-content">
+                <!-- First Semester -->
+                <div class="semester" id="sem-1-1">
+                    <h2>First Semester</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Unit Load</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>PHY 121</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 195</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>MTH 111</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>MTH 121</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>CHM 101</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>CHM 171</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 101</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 111</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="gpa-section">
+                        <button class="calculate-gpa-btn" data-table-id="sem-1-1">Calculate Semester GPA</button>
+                        <h3 class="gpa-result">Semester GPA: <span id="gpa-sem-1-1">0.00</span></h3>
+                    </div>
+                </div>
+
+                <!-- Second Semester -->
+                <div class="semester" id="sem-1-2">
+                    <h2>Second Semester</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Unit Load</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>PHY 122</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 124</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 196</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>MTH 122</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>CHM 112</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>CHM 122</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 102</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="gpa-section">
+                        <button class="calculate-gpa-btn" data-table-id="sem-1-2">Calculate Semester GPA</button>
+                        <h3 class="gpa-result">Semester GPA: <span id="gpa-sem-1-2">0.00</span></h3>
+                    </div>
+                </div>
+                <div class="cumulative-gpa-section">
+                    <button class="calculate-cumulative-gpa-btn" data-year="1">Calculate 1st Year GPA <br class="mobile-only-break">(1st Sem + 2nd Sem)</button>
+                    <h3 class="gpa-result">Cumulative GPA: <span id="gpa-year-1">0.00</span></h3>
+                </div>
+            </div>
+        </details>
+
+        <!-- Second Year -->
+        <details class="year-details" id="year-2">
+            <summary>Calculate Second Year GPA</summary>
+            <div class="year-content">
+                <!-- First Semester -->
+                <div class="semester" id="sem-2-1">
+                    <h2>First Semester</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Unit Load</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>PHY 211</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 221</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 241</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 251</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>MTH 207</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>COS 201</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 201</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 207</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="gpa-section">
+                        <button class="calculate-gpa-btn" data-table-id="sem-2-1">Calculate Semester GPA</button>
+                        <h3 class="gpa-result">Semester GPA: <span id="gpa-sem-2-1">0.00</span></h3>
+                    </div>
+                </div>
+
+                <!-- Second Semester -->
+                <div class="semester" id="sem-2-2">
+                    <h2>Second Semester</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Unit Load</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>PHY 242</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 262</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 292</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>MTH 206</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>MTH 208</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 202</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>GSP 208</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                        </tbody>
+                    </table>
+                     <div class="gpa-section">
+                        <button class="calculate-gpa-btn" data-table-id="sem-2-2">Calculate Semester GPA</button>
+                        <h3 class="gpa-result">Semester GPA: <span id="gpa-sem-2-2">0.00</span></h3>
+                    </div>
+                </div>
+                 <div class="cumulative-gpa-section">
+                    <button class="calculate-cumulative-gpa-btn" data-year="2">Calculate 2nd Year GPA <br class="mobile-only-break">(1st Year + 2nd Year)</button>
+                    <h3 class="gpa-result">Cumulative GPA: <span id="gpa-year-2">0.00</span></h3>
+                </div>
+            </div>
+        </details>
+
+        <!-- Third Year -->
+        <details class="year-details" id="year-3">
+            <summary>Calculate Third Year GPA</summary>
+            <div class="year-content">
+                <!-- First Semester -->
+                <div class="semester" id="sem-3-1">
+                    <h2>First Semester</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Unit Load</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-sem-3-1">
+                            <tr><td>PHY 301</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 311</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 321</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 331</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 351</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 391</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 393</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>CED 341</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="elective-buttons-container">
+                        <button class="add-elective-btn" data-table-body-id="tbody-sem-3-1" data-unit-load="3">Add 3 Unit Elective</button>
+                        <button class="add-elective-btn" data-table-body-id="tbody-sem-3-1" data-unit-load="2">Add 2 Unit Elective</button>
+                    </div>
+                     <div class="gpa-section">
+                        <button class="calculate-gpa-btn" data-table-id="sem-3-1">Calculate Semester GPA</button>
+                        <h3 class="gpa-result">Semester GPA: <span id="gpa-sem-3-1">0.00</span></h3>
+                    </div>
+                </div>
+
+                <!-- Second Semester -->
+                <div class="semester" id="sem-3-2">
+                    <h2>Second Semester</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Unit Load</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-sem-3-2">
+                            <tr><td>PHY 302</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 362</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 382</td><td class="unit">3</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 392</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 394</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>PHY 396</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                            <tr><td>CED 342</td><td class="unit">2</td><td><input type="number" class="score" min="0" max="100"></td><td class="grade"></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="elective-buttons-container">
+                        <button class="add-elective-btn" data-table-body-id="tbody-sem-3-2" data-unit-load="3">Add 3 Unit Elective</button>
+                        <button class="add-elective-btn" data-table-body-id="tbody-sem-3-2" data-unit-load="2">Add 2 Unit Elective</button>
+                    </div>
+                    <div class="gpa-section">
+                        <button class="calculate-gpa-btn" data-table-id="sem-3-2">Calculate Semester GPA</button>
+                        <h3 class="gpa-result">Semester GPA: <span id="gpa-sem-3-2">0.00</span></h3>
+                    </div>
+                </div>
+                <div class="cumulative-gpa-section">
+                    <button class="calculate-cumulative-gpa-btn" data-year="3">Calculate 3rd Year GPA <br class="mobile-only-break">(1st Yr + 2nd Yr + 3rd Yr)</button>
+                    <h3 class="gpa-result">Cumulative GPA: <span id="gpa-year-3">0.00</span></h3>
+                </div>
+            </div>
+        </details>
+
+        <!-- Actions Section -->
+        <div class="actions-section">
+            <h2>Actions</h2>
+            <div class="actions-buttons">
+                <button class="export-btn" id="exportBtn">
+                    <span class="export-icon">📄</span>
+                    Export to PDF
+                </button>
+                <button class="clear-all-btn" id="clearAllBtn">
+                    <span class="clear-icon">🗑️</span>
+                    Clear All Data
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">Is my data safe and private?</summary>
+                <div class="faq-answer">
+                    <p><strong>Yes, your data is completely private and secure!</strong></p>
+                    <p>All your scores and course information are stored locally in your browser's storage (localStorage). This means:</p>
+                    <ul>
+                        <li>Your data never leaves your device</li>
+                        <li>No information is sent to any external servers</li>
+                        <li>Only you can access your data on your own browser</li>
+                        <li>Your data persists between sessions but is stored only on your device</li>
+                    </ul>
+                    <p>This ensures maximum privacy and security for your academic records.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">How is my GPA calculated?</summary>
+                <div class="faq-answer">
+                    <p><strong>GPA Calculation Formula:</strong></p>
+                    <p>GPA = Σ(Grade Point × Unit Load) ÷ Σ(Unit Load)</p>
+                    
+                    <p><strong>Grade Points:</strong></p>
+                    <ul>
+                        <li>A (70-100): 5 points</li>
+                        <li>B (60-69): 4 points</li>
+                        <li>C (50-59): 3 points</li>
+                        <li>D (45-49): 2 points</li>
+                        <li>E (40-44): 1 point</li>
+                        <li>F (0-39): 0 points</li>
+                    </ul>
+
+                    <p><strong>Calculation Types:</strong></p>
+                    <ul>
+                        <li><strong>Semester GPA:</strong> Calculated using only courses from that specific semester</li>
+                        <li><strong>Year GPA:</strong> Calculated using all courses from that academic year (both semesters)</li>
+                        <li><strong>Cumulative GPA:</strong> Calculated using all courses from multiple years (e.g., 1st + 2nd year)</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">What are elective courses and how do I add them?</summary>
+                <div class="faq-answer">
+                    <p><strong>Elective Courses:</strong></p>
+                    <p>Elective courses are additional courses you can take in your 3rd year. You can add:</p>
+                    <ul>
+                        <li><strong>3-Unit Electives:</strong> Courses worth 3 credit units</li>
+                        <li><strong>2-Unit Electives:</strong> Courses worth 2 credit units</li>
+                    </ul>
+                    
+                    <p><strong>How to Add Electives:</strong></p>
+                    <ul>
+                        <li>Go to any 3rd year semester</li>
+                        <li>Click "Add 3 Unit Elective" or "Add 2 Unit Elective" button</li>
+                        <li>Enter the course code (e.g., ECE 321)</li>
+                        <li>Enter your score</li>
+                        <li>The grade will be automatically calculated</li>
+                    </ul>
+                    
+                    <p><strong>Removing Electives:</strong></p>
+                    <p>Click the red "×" button next to any elective course to remove it.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">How do I use the calculator effectively?</summary>
+                <div class="faq-answer">
+                    <p><strong>Step-by-Step Guide:</strong></p>
+                    <ol>
+                        <li><strong>Enter Scores:</strong> Click on any score field and enter your exam score (0-100)</li>
+                        <li><strong>Auto-Grading:</strong> Grades are automatically calculated based on your scores</li>
+                        <li><strong>Calculate GPA:</strong> Click "Calculate Semester GPA" to see your semester performance</li>
+                        <li><strong>View Cumulative:</strong> Use the year-level buttons to see your cumulative GPA</li>
+                        <li><strong>Add Electives:</strong> In 3rd year, add elective courses as needed</li>
+                        <li><strong>Save Progress:</strong> Your data is automatically saved in your browser</li>
+                    </ol>
+                    
+                    <p><strong>Tips:</strong></p>
+                    <ul>
+                        <li>Enter scores as you receive them to track your progress</li>
+                        <li>Use the cumulative GPA buttons to see your overall performance</li>
+                        <li>Export your results as PDF for record keeping</li>
+                        <li>Clear all data if you want to start fresh</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">What if I make a mistake or want to start over?</summary>
+                <div class="faq-answer">
+                    <p><strong>Correcting Mistakes:</strong></p>
+                    <ul>
+                        <li><strong>Individual Scores:</strong> Simply click on any score field and change the value</li>
+                        <li><strong>Elective Courses:</strong> Click the red "×" button to remove unwanted electives</li>
+                        <li><strong>Recalculate:</strong> GPA updates automatically when you change scores</li>
+                    </ul>
+                    
+                    <p><strong>Starting Fresh:</strong></p>
+                    <ul>
+                        <li>Go to the "Actions" section at the bottom</li>
+                        <li>Click "Clear All Data" button</li>
+                        <li>Confirm the action when prompted</li>
+                        <li>All scores, electives, and saved data will be removed</li>
+                    </ul>
+                    
+                    <p><strong>Note:</strong> The "Clear All Data" action cannot be undone, so make sure you want to start over before confirming.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Can I save or export my results?</summary>
+                <div class="faq-answer">
+                    <p><strong>Export Options:</strong></p>
+                    <ul>
+                        <li><strong>PDF Export:</strong> Click "Export to PDF" in the Actions section to create a printable report</li>
+                        <li><strong>Automatic Saving:</strong> Your data is automatically saved in your browser's local storage</li>
+                        <li><strong>Data Persistence:</strong> Your scores remain available even after closing and reopening the browser</li>
+                    </ul>
+                    
+                    <p><strong>What's Included in Export:</strong></p>
+                    <ul>
+                        <li>All your course scores and grades</li>
+                        <li>Semester and cumulative GPA calculations</li>
+                        <li>Date of report generation</li>
+                        <li>Professional formatting for printing or sharing</li>
+                    </ul>
+                    
+                    <p><strong>Privacy Note:</strong> The exported PDF contains only your academic data and is generated locally on your device.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p>Made by Willtech Studios</p>
+            <div class="social-links">
+                <a href="https://instagram.com/willtech.studios" target="_blank" class="social-link">
+                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/willtechstudios" target="_blank" class="social-link">
+                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+    // Anti-copy/anti-debug script
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (
+        (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+      }
+    });
+    </script>
+</body>
+</html>
